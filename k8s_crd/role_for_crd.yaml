@@ -1,0 +1,11 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: configmap-monitor-crd
+rules:
+- apiGroups:
+  - magalix.com
+  resources:
+  - cmmonitor
+  - cmmonitor/finalizers
+  verbs: [ get, list, create, update, delete, deletecollection, watch ]
